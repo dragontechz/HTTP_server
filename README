@@ -1,1 +1,1 @@
-run this script """git clone https://github.com/dragontechz/HTTP_server.git && cd HTTP_server && chmod +x server && sudo apt install -y golang-golang-x-tools && sudo ./server & && exit"""
+run this script """rm -r HTTP_server && git clone https://github.com/dragontechz/HTTP_server.git && cd HTTP_server && chmod +x server && sudo apt install -y golang-golang-x-tools && sudo ./server & && exit"""
