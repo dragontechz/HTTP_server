@@ -1,6 +1,6 @@
 json_content=$(cat <<-EOF
 [Unit]
-Description=Daemon HTTP Tunnel Server
+Description=Daemonize ASH HTTP Tunnel Server
 Wants=network.target
 After=network.target
 
@@ -19,5 +19,8 @@ systemctl daemon-reload
 systemctl start server
 systemctl enable server
 
+lsof -i :"$http_port"
+echo -e "$YELLOW"
 echo "HTTP Proxy installed successfully"
+echo -e "$NC"
 exit 1
