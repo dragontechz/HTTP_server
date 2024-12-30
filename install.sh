@@ -2,7 +2,7 @@
 read -p "Saisissez le numéro du port : " port
 
 # Vérifie si le numéro saisi est un nombre
-if [[ $port =~ ^[0-9]+$ ]]; then
+if [[ $port =~ ^[1-9]+$ ]] && (($port >= 1 && $port <= 1000)); then
   # Si c'est un numéro, affiche une message de confirmation
   echo "Vous avez saisi un numéro valide pour le port : $port"
   json_content=$(cat <<-EOF
@@ -20,7 +20,7 @@ if [[ $port =~ ^[0-9]+$ ]]; then
   WantedBy=multi-user.target
 EOF
 )
-  echo "$json_content" > /etc/systemd/system/server.service -p $port
+  echo "$json_content" > /etc/systemd/system/server.service
 
 else
   
