@@ -21,6 +21,16 @@ if (($port >= 1 && $port <= 65535)); then
 EOF
 )
   echo "$json_content" > /etc/systemd/system/server.service
+  systemctl daemon-reload
+  systemctl start server
+  systemctl enable server
+  lsof -i :"$port"
+  echo -e "$YELLOW"
+  echo "HTTP Proxy installed successfully"
+  echo -e "$NC"
+  exit 1
+fi
+
 
 else
   
@@ -43,7 +53,7 @@ EOF
   echo "$json_content" > /etc/systemd/system/server.service
 
 
-echo "$json_content" > /etc/systemd/system/server.service
+
 systemctl daemon-reload
 systemctl start server
 systemctl enable server
