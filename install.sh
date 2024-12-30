@@ -2,7 +2,7 @@
 read -p "Saisissez le numéro du port : " port
 
 # Vérifie si le numéro saisi est un nombre
-if [[ $port =~ ^[1-9]+$ ]] && (($port >= 1 && $port <= 1000)); then
+if (($port >= 1 && $port <= 65535)); then
   # Si c'est un numéro, affiche une message de confirmation
   echo "Vous avez saisi un numéro valide pour le port : $port"
   json_content=$(cat <<-EOF
