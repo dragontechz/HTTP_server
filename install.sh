@@ -54,14 +54,3 @@ echo "HTTP Proxy installed successfully"
 echo -e "$NC"
 exit 1
 fi
-
-
-systemctl daemon-reload
-systemctl start server
-systemctl enable server
-
-lsof -i :"$http_port"
-echo -e "$YELLOW"
-echo "HTTP Proxy installed successfully"
-echo -e "$NC"
-exit 1
