@@ -48,7 +48,7 @@ systemctl daemon-reload
 systemctl start server
 systemctl enable server
 
-lsof -i :"$http_port"
+lsof -i :"$port"
 echo -e "$YELLOW"
 echo "HTTP Proxy installed successfully"
 echo -e "$NC"
