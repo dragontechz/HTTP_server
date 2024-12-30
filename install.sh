@@ -59,7 +59,7 @@ systemctl enable server
 lsof -i :"$port"
 echo -e "$YELLOW"
 echo "HTTP Proxy installed successfully"
-./server
+./server -p $port
 echo -e "$NC"
 exit 1
 fi
